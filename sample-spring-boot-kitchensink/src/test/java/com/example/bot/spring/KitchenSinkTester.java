@@ -51,7 +51,7 @@ import com.example.bot.spring.DatabaseEngine;
 public class KitchenSinkTester {
 	@Autowired
 	private DatabaseEngine databaseEngine;
-	
+	/*
 	@Test
 	public void testNotFound() throws Exception {
 		boolean thrown = false;
@@ -62,30 +62,69 @@ public class KitchenSinkTester {
 		}
 		assertThat(thrown).isEqualTo(true);
 	}
-	
+	*/
 	@Test
 	public void testFound() throws Exception {
 		boolean thrown = false;
 		String result = null;
 		try {
-			result = this.databaseEngine.search("abc");
+			result = this.databaseEngine.search("desmond");
 		} catch (Exception e) {
 			thrown = true;
 		}
 		assertThat(!thrown).isEqualTo(true);
-		assertThat(result).isEqualTo("def");
+		assertThat(result).isEqualTo("good lecturer");
 	}
 	
 	@Test
-	public void hi() throws Exception {
+	public void test2() throws Exception {
 		boolean thrown = false;
 		String result = null;
 		try {
-			result = this.databaseEngine.search("Hi");
+			result = this.databaseEngine.search("kevin");
 		} catch (Exception e) {
 			thrown = true;
 		}
 		assertThat(!thrown).isEqualTo(true);
-		assertThat(result).isEqualTo("Hey, how things going?");
+		assertThat(result).isEqualTo("good TA");
+	}
+	
+	@Test
+	public void test3() throws Exception {
+		boolean thrown = false;
+		String result = null;
+		try {
+			result = this.databaseEngine.search("comp3111");
+		} catch (Exception e) {
+			thrown = true;
+		}
+		assertThat(!thrown).isEqualTo(true);
+		assertThat(result).isEqualTo("sungkim");
+	}
+	
+	@Test
+	public void test4() throws Exception {
+		boolean thrown = false;
+		String result = null;
+		try {
+			result = this.databaseEngine.search("comp2611");
+		} catch (Exception e) {
+			thrown = true;
+		}
+		assertThat(!thrown).isEqualTo(true);
+		assertThat(result).isEqualTo("cindy");
+	}
+	
+	@Test
+	public void test5() throws Exception {
+		boolean thrown = false;
+		String result = null;
+		try {
+			result = this.databaseEngine.search("math1014");
+		} catch (Exception e) {
+			thrown = true;
+		}
+		assertThat(!thrown).isEqualTo(true);
+		assertThat(result).isEqualTo("omg");
 	}
 }
